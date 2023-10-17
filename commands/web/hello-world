@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#ddev-generated
+
 ## Description: Say hello to the world
 ## Usage: hello-world
 ## Example: ddev hello-world

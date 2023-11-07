@@ -35,8 +35,8 @@ teardown() {
 @test "install from release" {
   set -eu -o pipefail
   cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
-  echo "# ddev get ddev/ddev-hello-world with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
-  ddev get ddev/ddev-hello-world
+  echo "# ddev get rfay/ddev-hello-world with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
+  ddev get rfay/ddev-hello-world
   ddev restart -y >/dev/null
   health_checks
 }

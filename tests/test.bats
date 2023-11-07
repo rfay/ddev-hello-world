@@ -13,8 +13,7 @@ setup() {
 
 health_checks() {
   # Do something useful here that verifies the add-on
-  run ddev hello-world
-  assert_success
+  ddev hello-world
 }
 
 teardown() {
@@ -29,7 +28,7 @@ teardown() {
   cd ${TESTDIR}
   echo "# ddev get ${DIR} with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
   ddev get ${DIR}
-  ddev restart
+  ddev restart -y
   health_checks
 }
 
@@ -38,7 +37,7 @@ teardown() {
   cd ${TESTDIR} || ( printf "unable to cd to ${TESTDIR}\n" && exit 1 )
   echo "# ddev get ddev/ddev-hello-world with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
   ddev get ddev/ddev-hello-world
-  ddev restart >/dev/null
+  ddev restart -y >/dev/null
   health_checks
 }
 
